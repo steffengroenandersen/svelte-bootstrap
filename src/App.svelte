@@ -4,6 +4,7 @@
   import Button from "./components/Button.svelte";
   import Table from "./components/Table.svelte";
   import LoginForm from "./components/LoginForm.svelte";
+  import Modal from "./components/Modal.svelte";
 
   /* Function for button */
   function handleButtonClick() {
@@ -53,4 +54,12 @@
   </div>
 
   <div class="col-6 offset-3"><LoginForm /></div>
+
+  <div class="mt-5">
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Launch demo modal
+    </button>
+    <Modal modalType={"add-user"}/>
+  </div>
 </div>
+<!-- Button trigger modal -->
