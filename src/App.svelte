@@ -5,6 +5,7 @@
   import Table from "./components/Table.svelte";
   import LoginForm from "./components/LoginForm.svelte";
   import Modal from "./components/Modal.svelte";
+  import Footer from "./components/Footer.svelte";
 
   /* Function for button */
   function handleButtonClick() {
@@ -41,29 +42,32 @@
   </tbody>`;
 
   /*  ChartJS */
-  import { chartType, myData, myOptions } from "./components/chartsjs-repl/settings.js";
-  import Select from "./components/chartsjs-repl/Select.svelte";
-  import Chart from "./components/chartsjs-repl/Chart.svelte";
+  // import { chartType, myData, myOptions } from "./components/chartsjs-repl/settings.js";
+  // import Select from "./components/chartsjs-repl/Select.svelte";
+  // import Chart from "./components/chartsjs-repl/Chart.svelte";
 
-  let type = chartType;
-  let data = myData;
-  let options = myOptions;
+  // let type = chartType;
+  // let data = myData;
+  // let options = myOptions;
 
-  $: config = {
-    type,
-    data,
-    options,
-  };
+  // $: config = {
+  //   type,
+  //   data,
+  //   options,
+  // };
 </script>
 
 <Navbar />
-<!-- <Sidebar /> -->
 
 <div class="container">
   <h1>Hello world</h1>
   <p>Press the following button to get started</p>
+
+  <!-- Button -->
+
   <Button onButtonClick={handleButtonClick} buttonText={"Get started"} />
 
+  <!-- Table -->
   <div class="mt-5">
     <Table data={tableData} />
   </div>
@@ -79,8 +83,12 @@
   </div>
 </div>
 
-<div class="col-6 mt-5">
+<Footer />
+
+<!-- <Sidebar /> -->
+
+<!-- <div class="col-6 mt-5">
   <Select bind:type />
 
   <Chart {config} />
-</div>
+</div> -->
