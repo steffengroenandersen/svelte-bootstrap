@@ -3,6 +3,7 @@
   import Sidebar from "./components/Sidebar.svelte";
   import Button from "./components/Button.svelte";
   import Table from "./components/Table.svelte";
+  import LoginForm from "./components/LoginForm.svelte";
 
   /* Function for button */
   function handleButtonClick() {
@@ -50,4 +51,6 @@
   <div class="mt-5">
     <Table data={tableData} />
   </div>
+
+  <div class="col-6 offset-3"><LoginForm /></div>
 </div>
