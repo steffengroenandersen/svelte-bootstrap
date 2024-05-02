@@ -39,6 +39,21 @@
       <td>@twitter</td>
     </tr>
   </tbody>`;
+
+  /*  ChartJS */
+  import { chartType, myData, myOptions } from "./components/chartsjs-repl/settings.js";
+  import Select from "./components/chartsjs-repl/Select.svelte";
+  import Chart from "./components/chartsjs-repl/Chart.svelte";
+
+  let type = chartType;
+  let data = myData;
+  let options = myOptions;
+
+  $: config = {
+    type,
+    data,
+    options,
+  };
 </script>
 
 <Navbar />
@@ -55,11 +70,17 @@
 
   <div class="col-6 offset-3"><LoginForm /></div>
 
+  <!-- Button trigger modal -->
   <div class="mt-5">
     <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Launch demo modal
     </button>
-    <Modal modalType={"add-user"}/>
+    <Modal modalType={"add-user"} />
   </div>
 </div>
-<!-- Button trigger modal -->
+
+<div class="col-6 mt-5">
+  <Select bind:type />
+
+  <Chart {config} />
+</div>
